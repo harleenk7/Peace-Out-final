@@ -1,0 +1,19 @@
+{
+  "name": "peaceout-landing-page",
+  "version": "1.0.0",
+  "description": "A modern, calming, and premium single-page landing site for Peace Out startup",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y http-server ./ -p 3000",
+    "dev": "npx -y http-server ./ -p 3000"
+  },
+  "keywords": [
+    "Peace Out",
+    "landing-page",
+    "manifestation",
+    "self-love",
+    "gratitude"
+  ],
+  "author": "Harleen Kaur & Drishti Malhotra",
+  "license": "ISC"
+}

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work With Us · Peace Out</title>
+  <link rel="icon" type="image/png" href="assets/logo-light.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --emerald: #035547;
+      --emerald-dark: #035547;
+      --warm-white: #fbfaf5;
+      /* unified pink (page background pink) */
+      --pink: #FCE8F1;
+      --pink-deep: var(--pink);
+      --charcoal: #13261f;
+      --charcoal-soft: #3a4f45;
+      --card-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--emerald-dark);
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Navigation */
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 22px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 10px 30px rgba(110, 140, 180, 0.08);
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      width: auto;
+      max-width: 1200px;
+      margin: 0 auto;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      transform: translateY(0);
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex: 1;
+      color: #000;
+      font-weight: 700;
+      font-size: 1.3rem;
+      font-family: 'Fraunces', serif;
+      transition: transform 0.3s ease;
+    }
+    .nav-brand:hover {
+      transform: scale(1.02);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      justify-content: center;
+    }
+    .nav-links a {
+      padding: 8px 12px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--charcoal-soft);
+      font-weight: 600;
+      font-size: 0.92rem;
+      letter-spacing: 0.03em;
+      font-family: 'Nunito Sans', sans-serif;
+      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+    .nav-links a:hover {
+      background: rgba(143, 178, 214, 0.16);
+      color: var(--charcoal);
+      transform: translateY(-1px);
+    }
+    .nav-links .active {
+      color: var(--emerald);
+      background: rgba(12, 69, 51, 0.06);
+    }
+    
+    /* Layout */
+    main {
+      flex: 1;
+      padding: 140px 7vw 80px;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      animation: fadeIn 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+    
+    /* Left Details Pane */
+    .details-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .collab-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--pink);
+      margin-bottom: 8px;
+    }
+    
+    .details-pane h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    
+    .details-pane .subtitle {
+      font-size: 1.08rem;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+    
+    .info-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 28px;
+      padding: 30px;
+    }
+    
+    .info-card h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+    
+    .bullet-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .bullet-list li {
+      display: flex;
+      gap: 12px;
+      font-size: 0.98rem;
+    }
+    
+    .bullet-list li strong {
+      color: var(--pink);
+    }
+    
+    .testimonial-card {
+      background: var(--warm-white);
+      border-radius: 28px;
+      padding: 34px;
+      color: var(--charcoal);
+      border: 1px solid rgba(19, 38, 31, 0.08);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .testimonial-card blockquote {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.98rem;
+      line-height: 1.65;
+      font-style: italic;
+      color: var(--charcoal-soft);
+      margin-bottom: 18px;
+    }
+    
+    .testimonial-meta {
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--emerald);
+    }
+    
+    /* Right Side Proposal Form Card */
+    .form-card {
+      background: var(--warm-white);
+      border: 1px solid rgba(19, 38, 31, 0.08);
+      border-radius: 36px;
+      box-shadow: var(--card-shadow);
+      padding: 40px;
+      color: var(--charcoal);
+    }
+    
+    .form-card h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+    
+    .form-card .form-subtitle {
+      color: var(--charcoal-soft);
+      font-size: 0.95rem;
+      margin-bottom: 26px;
+    }
+    
+    .collab-form {
+      display: grid;
+      gap: 20px;
+    }
+    
+    .floating-field {
+      position: relative;
+      width: 100%;
+    }
+    
+    .floating-field input,
+    .floating-field select,
+    .floating-field textarea {
+      width: 100%;
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(19, 38, 31, 0.15);
+      background: #fff;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--charcoal);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .floating-field input:focus,
+    .floating-field select:focus,
+    .floating-field textarea:focus {
+      border-color: var(--emerald);
+      box-shadow: 0 0 0 4px rgba(12, 69, 51, 0.06);
+    }
+    
+    .floating-field label {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      padding: 0 4px;
+      color: var(--charcoal-soft);
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      pointer-events: none;
+    }
+    
+    .floating-field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .floating-field textarea ~ label {
+      top: 24px;
+    }
+    
+    /* Active floating label style */
+    .floating-field input:focus ~ label,
+    .floating-field input:not(:placeholder-shown) ~ label,
+    .floating-field select:focus ~ label,
+    .floating-field select:valid ~ label,
+    .floating-field textarea:focus ~ label,
+    .floating-field textarea:not(:placeholder-shown) ~ label {
+      top: 0;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--emerald);
+    }
+    
+    .collab-submit {
+      width: 100%;
+      padding: 15px;
+      border-radius: 12px;
+      border: none;
+      background: var(--emerald);
+      color: #fff;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 26px rgba(3,85,71,0.12);
+    }
+    
+    .collab-submit:hover {
+      background: var(--emerald-dark);
+      box-shadow: 0 14px 34px rgba(3,85,71,0.14);
+    }
+    
+    .collab-submit:active {
+      transform: scale(0.98);
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: var(--emerald-dark);
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: auto;
+    }
+    
+    /* Responsive layout */
+    @media (max-width: 900px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .details-pane h1 {
+        font-size: 2rem;
+      }
+      .form-card {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="site-nav" class="nav-bar" aria-label="Main navigation">
+  <a class="nav-brand" href="index.html">Peace Out</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="community.html">Community</a></li>
+    <li><a href="collab.html" class="active">Work With Us</a></li>
+  </ul>
+  <div style="flex: 1;"></div>
+</nav>
+
+<main>
+  <div class="container">
+    <!-- Centered Header Block -->
+    <div class="collab-header reveal" style="text-align: center; max-width: 800px; margin: 0 auto 50px;">
+      <span class="collab-eyebrow">for mindfulness coaches</span>
+      <h1 style="font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 500; line-height: 1.25; margin-bottom: 16px;">A calm, thoughtful partner for your next chapter.</h1>
+      <p class="subtitle" style="font-size: 1.1rem; opacity: 0.9; max-width: 680px; margin: 0 auto;">For coaches who want support that feels grounded, strategic and easy to trust, we bring experience in content, community and brand storytelling shaped around real people.</p>
+    </div>
+    
+    <div class="grid-container">
+      
+      <!-- Left Details Pane -->
+      <div class="details-pane">
+        
+        <div class="info-card">
+          <h2>What we bring to the work</h2>
+          <ul class="bullet-list">
+            <li><strong>✦</strong><span>Content strategy and calm, clear messaging for wellness brands and coaches.</span></li>
+            <li><strong>✦</strong><span>Community building that helps your audience feel seen, supported and connected.</span></li>
+            <li><strong>✦</strong><span>Digital products and resources designed to reflect your voice and your values.</span></li>
+            <li><strong>✦</strong><span>Hands-on collaboration that keeps the process thoughtful, organised and human.</span></li>
+          </ul>
+        </div>
+        
+        <div class="testimonial-card">
+          <blockquote>“Working with Drishti and Harleen at Peace Out has been an incredible experience. From the very beginning, they took the time to truly understand the vision behind our wellness practice and have become trusted strategic partners in bringing that vision to life.
+          <br><br>
+          What I value most is their innovative mindset and thoughtful use of technology to spark new ideas, strengthen brand strategy and create meaningful content.”</blockquote>
+          <div class="testimonial-meta">— Strategic Wellness Partner</div>
+        </div>
+      </div>
+      
+      <!-- Right Side Proposal Form Card -->
+      <div class="form-card">
+        <h2>Submit a Proposal</h2>
+        <p class="form-subtitle">Fill in your proposal details below. We reply to all inquiries within 2-3 business days.</p>
+        
+        <form class="collab-form" id="collab-form">
+          <div class="floating-field">
+            <input id="collab-name" type="text" placeholder=" " required>
+            <label for="collab-name">Your name</label>
+          </div>
+          
+          <div class="floating-field">
+            <input id="collab-email" type="email" placeholder=" " required>
+            <label for="collab-email">Email address</label>
+          </div>
+          
+          <div class="floating-field">
+            <select id="collab-type" required>
+              <option value="" selected disabled></option>
+              <option value="coach">Mindfulness / Wellness Coach</option>
+              <option value="brand">Wellness / Mental Health Brand</option>
+              <option value="creator">Creator / Writer</option>
+              <option value="other">Other Collaboration</option>
+            </select>
+            <label for="collab-type">I am a...</label>
+          </div>
+          
+          <div class="floating-field">
+            <select id="collab-purpose" required>
+              <option value="" selected disabled></option>
+              <option value="collab-post">Collaboration Post / Resource</option>
+              <option value="digital-product">Digital Products / Downloads</option>
+              <option value="community">Social Media / Community Building</option>
+              <option value="workshop">Workshops & Challenges</option>
+            </select>
+            <label for="collab-purpose">Connect for...</label>
+          </div>
+          
+          <div class="floating-field">
+            <textarea id="collab-message" placeholder=" " required></textarea>
+            <label for="collab-message">Tell us more about your ideas</label>
+          </div>
+          
+          <button class="collab-submit" type="submit">Submit Proposal</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 Peace Out</footer>
+
+<script>
+
+// Form Submit Handler
+document.getElementById('collab-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const name = document.getElementById('collab-name').value;
+  
+  // Custom toast message
+  const toast = document.createElement('div');
+  toast.style.position = 'fixed';
+  toast.style.bottom = '30px';
+  toast.style.left = '50%';
+  toast.style.transform = 'translateX(-50%)';
+  toast.style.background = '#0c4533';
+  toast.style.color = '#fff';
+  toast.style.padding = '16px 28px';
+  toast.style.borderRadius = '100px';
+  toast.style.boxShadow = '0 12px 35px rgba(0,0,0,0.3)';
+  toast.style.zIndex = '9999';
+  toast.style.fontWeight = '600';
+  toast.style.fontSize = '0.95rem';
+  toast.style.animation = 'slideUp 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+  
+  toast.innerText = `Thank you, ${name}! Your proposal has been gently received.`;
+  document.body.appendChild(toast);
+  
+  // Reset form
+  document.getElementById('collab-form').reset();
+  
+  setTimeout(() => {
+    toast.style.opacity = '0';
+    toast.style.transition = 'opacity 0.5s ease';
+    setTimeout(() => {
+      document.body.removeChild(toast);
+    }, 500);
+  }, 4000);
+});
+
+// Toast keyframe injection
+const style = document.createElement('style');
+style.innerHTML = `
+  @keyframes slideUp {
+    from { bottom: 0px; opacity: 0; }
+    to { bottom: 30px; opacity: 1; }
+  }
+`;
+document.head.appendChild(style);
+</script>
+
+</body>
+</html>
