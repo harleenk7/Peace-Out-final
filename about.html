@@ -69,10 +69,32 @@
       color: var(--charcoal-soft);
       line-height: 1.55;
     }
-    .nav-links a {
-      font-family: 'Nunito Sans', sans-serif !important;
-      font-size: 0.92rem !important;
-      letter-spacing: 0.03em !important;
+
+    @media (max-width: 768px) {
+      .founder-row, .harleen-row {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 24px !important;
+      }
+      .founder-image-col {
+        width: 180px;
+        margin: 0 auto;
+      }
+      .founder-image-col img {
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 20px !important;
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        padding: 4px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2) !important;
+      }
+      .founder-text-col {
+        text-align: center !important;
+      }
+      .founder-text-col h3 {
+        margin-top: 0;
+        padding-top: 0;
+      }
     }
   </style>
 </head>
@@ -89,12 +111,11 @@
   </ul>
 
   <div style="flex: 1;"></div>
-
-  <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false" style="padding: 0;">
-
-    <img src="assets/logo.jpg" alt="Menu" class="mobile-menu-icon" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--emerald); display: block;">
-
-  </button>
+    <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
 
 </nav>
 
@@ -243,15 +264,15 @@
       </div>
 
       <!-- Harleen Row -->
-      <div class="founder-row" style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+      <div class="founder-row harleen-row" style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap; flex-direction: row-reverse;">
+        <div class="founder-image-col" style="flex: 1; min-width: 300px;">
+          <img src="assets/harleen_photo.jpg" alt="Harleen Kaur" style="width: 100%; border-radius: 24px; box-shadow: 0 12px 30px rgba(0,0,0,0.15);">
+        </div>
         <div class="founder-text-col" style="flex: 1.2; min-width: 300px; text-align: left;">
           <h3 style="font-family: 'Fraunces', serif; font-size: 2.2rem; color: #fff; margin-bottom: 20px;">Harleen Kaur</h3>
           <p style="font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.9); margin-bottom: 14px;">Harleen leads product and strategy, turning big ideas into tools people can actually use and small daily practices that hold up in a busy life.</p>
           <p style="font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.9); margin-bottom: 14px;">She pairs a sharp eye for detail with real warmth, shaping the resources, collaborations and partnerships that carry Peace Out out into the world.</p>
           <p style="font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.9);">Grounded in her own practice of mindfulness and intentional growth, she builds things that make peace feel practical and genuinely within reach.</p>
-        </div>
-        <div class="founder-image-col" style="flex: 1; min-width: 300px;">
-          <img src="assets/harleen_photo.jpg" alt="Harleen Kaur" style="width: 100%; border-radius: 24px; box-shadow: 0 12px 30px rgba(0,0,0,0.15);">
         </div>
       </div>
 
@@ -320,31 +341,20 @@
   </footer>
 
 <script>
-// gentle fade-in on scroll
-const io = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
-},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// Accordion toggle logic for about-cards
-document.querySelectorAll('.about-card').forEach(card => {
-  card.addEventListener('click', () => {
-    card.classList.toggle('active');
-  });
-});
-
-// Scroll stop navbar logic
-const navBar = document.getElementById('site-nav');
-if (navBar) {
-  let scrollTimeout;
-  window.addEventListener('scroll', () => {
-    navBar.classList.add('nav-hidden');
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      navBar.classList.remove('nav-hidden');
-    }, 250);
-  }, { passive: true });
-}
+// Scroll stop navbar logic specific to about.html
+(() => {
+  const navBar = document.getElementById('site-nav');
+  if (navBar) {
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+      navBar.classList.add('nav-hidden');
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        navBar.classList.remove('nav-hidden');
+      }, 250);
+    }, { passive: true });
+  }
+})();
 </script>
 
 <script src="script.js?v=21"></script>
