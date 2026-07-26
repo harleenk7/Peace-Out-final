@@ -101,88 +101,137 @@ function initStack() {
   });
 }
 
-function handleAnimateStack() {
+function handleStackNav(direction) {
   if (isStackAnimating) return;
   isStackAnimating = true;
-  
+
   const container = document.getElementById('card-stack');
   if (!container) return;
-  
+
   const oldFrontCard = cards[0];
   const oldFrontEl = document.getElementById(`card-${oldFrontCard.id}`);
-  
-  // 1. Exit the front card downwards
+
+  // 1. Fly the front card out in the chosen direction
+  const flyX = direction === 'right' ? '120%' : '-220%';
   if (oldFrontEl) {
-    oldFrontEl.style.transform = `translate(-50%, 500px) scale(1)`;
+    oldFrontEl.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1), opacity 0.4s ease';
+    oldFrontEl.style.transform = `translate(${flyX}, 12px) scale(0.92) rotate(${direction === 'right' ? '8deg' : '-8deg'})`;
     oldFrontEl.style.opacity = '0';
     oldFrontEl.style.zIndex = '10';
   }
-  
-  // 2. Slide the middle and back cards down
+
+  // 2. Promote middle and back cards to their new positions
   const card1El = document.getElementById(`card-${cards[1].id}`);
   if (card1El) {
+    card1El.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1), opacity 0.6s ease';
     card1El.style.transform = `translate(-50%, 12px) scale(1)`;
     card1El.style.zIndex = '3';
+    card1El.style.opacity = '1';
   }
-  
+
   const card2El = document.getElementById(`card-${cards[2].id}`);
   if (card2El) {
+    card2El.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1), opacity 0.6s ease';
     card2El.style.transform = `translate(-50%, -16px) scale(0.95)`;
     card2El.style.zIndex = '2';
+    card2El.style.opacity = '1';
   }
-  
-  // 3. Create the new entering card at the back
-  const nextContentType = (cards[2].contentType + 1) % cardData.length;
-  const newCard = { id: nextId++, contentType: nextContentType };
-  cards.push(newCard);
-  
-  const enterCardEl = createCardElement(newCard, 2);
-  enterCardEl.style.transform = `translate(-50%, -16px) scale(0.9)`;
-  enterCardEl.style.opacity = '0';
-  enterCardEl.style.zIndex = '1';
-  container.appendChild(enterCardEl);
-  
-  // force reflow
-  enterCardEl.offsetHeight;
-  
-  // transition to back/top position
-  enterCardEl.style.transform = `translate(-50%, -44px) scale(0.9)`;
-  enterCardEl.style.opacity = '1';
-  
-  // 4. Clean up old card and reset animation lock after transition
+
+  // 3. Wait for the front card to fully fade out, then snap it to the back and fade in
   setTimeout(() => {
-    if (oldFrontEl && oldFrontEl.parentNode) {
-      oldFrontEl.parentNode.removeChild(oldFrontEl);
+    if (oldFrontEl) {
+      // Snap directly to the final back position (still invisible)
+      oldFrontEl.style.transition = 'none';
+      oldFrontEl.style.transform = 'translate(-50%, -44px) scale(0.9)';
+      oldFrontEl.style.zIndex = '1';
+
+      // Force reflow so the snap takes effect before the fade
+      oldFrontEl.offsetHeight;
+
+      // Just fade in — no sliding, no directional artifact
+      oldFrontEl.style.transition = 'opacity 0.4s ease';
+      oldFrontEl.style.opacity = '1';
     }
-    cards.shift();
+
+    // 4. Update the array (the card that flew away is now at the back)
+    cards.push(cards.shift());
+
     isStackAnimating = false;
-  }, 900);
+  }, 500); // Wait until the card is fully off-screen/transparent
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   initStack();
-  const animBtn = document.getElementById('btn-animate-stack');
-  if (animBtn) {
-    animBtn.addEventListener('click', handleAnimateStack);
-  }
-  
+
+  const btnLeft = document.getElementById('btn-stack-left');
+  const btnRight = document.getElementById('btn-stack-right');
+  if (btnLeft)  btnLeft.addEventListener('click',  () => handleStackNav('left'));
+  if (btnRight) btnRight.addEventListener('click', () => handleStackNav('right'));
+
   // Accordion toggle logic for about-cards
   document.querySelectorAll('.about-card').forEach(card => {
     card.addEventListener('click', () => {
       card.classList.toggle('active');
     });
   });
+});
+// Mobile Navigation Toggle
+document.addEventListener('DOMContentLoaded', () => {
+  // Create overlay for background blur
+  const overlay = document.createElement('div');
+  overlay.className = 'mobile-menu-overlay';
+  document.body.appendChild(overlay);
 
-  // Scroll stop navbar logic: hide when scrolling, show when stopped
-  const navBar = document.getElementById('site-nav');
-  if (navBar) {
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-      navBar.classList.add('nav-hidden');
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        navBar.classList.remove('nav-hidden');
-      }, 250);
-    }, { passive: true });
-  }
+  const closeMenu = (navBar) => {
+    navBar.classList.remove('nav-open');
+    const toggle = navBar.querySelector('.mobile-menu-toggle');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    overlay.classList.remove('active');
+  };
+
+  overlay.addEventListener('click', () => {
+    document.querySelectorAll('.nav-bar.nav-open').forEach(nav => closeMenu(nav));
+  });
+
+  const toggles = document.querySelectorAll('.mobile-menu-toggle');
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const navBar = toggle.closest('.nav-bar');
+      if (navBar) {
+        navBar.classList.toggle('nav-open');
+        const isExpanded = navBar.classList.contains('nav-open');
+        toggle.setAttribute('aria-expanded', isExpanded);
+        
+        if (isExpanded) {
+          // Lock body scroll completely
+          document.body.style.overflow = 'hidden';
+          document.body.style.position = 'fixed';
+          document.body.style.width = '100%';
+          document.body.style.top = `-${window.scrollY}px`;
+          overlay.classList.add('active');
+        } else {
+          // Restore body scroll
+          const scrollY = document.body.style.top;
+          document.body.style.overflow = '';
+          document.body.style.position = '';
+          document.body.style.width = '';
+          document.body.style.top = '';
+          window.scrollTo(0, parseInt(scrollY || '0') * -1);
+          overlay.classList.remove('active');
+        }
+      }
+    });
+  });
+
+  // Close mobile menu when a link is clicked
+  const navLinks = document.querySelectorAll('.nav-links a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const navBar = link.closest('.nav-bar');
+      if (navBar && navBar.classList.contains('nav-open')) {
+        closeMenu(navBar);
+      }
+    });
+  });
 });

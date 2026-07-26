@@ -1,234 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peace Out — Mindful tools, gentle resources and a wellness community</title>
-<meta name="description" content="Peace Out creates thoughtful wellness tools, workbooks and resources and a calmer community to use them in. Slow down without falling behind.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peace Out — Mindful tools, gentle resources and a wellness community</title>
+  <meta name="description"
+    content="Peace Out creates thoughtful wellness tools, workbooks and resources and a calmer community to use them in. Slow down without falling behind.">
 
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="assets/logo-light.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo-light.png">
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap"
+    rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=48">
+  <link rel="stylesheet" href="styles.css?v=48">
 </head>
+
 <body>
 
-<!-- Navigation Bar -->
-<nav id="site-nav" class="nav-bar" aria-label="Main navigation">
-  <a class="nav-brand" href="#">Peace Out</a>
-  <ul class="nav-links">
-    <li><a href="#">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="shop.html">Shop</a></li>
-    <li><a href="community.html">Community</a></li>
-    <li><a href="collab.html">Work With Us</a></li>
-  </ul>
-  <div style="flex: 1;"></div>
-</nav>
+  <!-- Navigation Bar -->
+  <nav id="site-nav" class="nav-bar" aria-label="Main navigation">
+    <a class="nav-brand" href="#">Peace Out</a>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="collab.html">Work With Us</a></li>
+    </ul>
+    <div style="flex: 1;"></div>
+    <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false" style="padding: 0;">
+      <img src="assets/logo.jpg" alt="Menu" class="mobile-menu-icon" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--emerald); display: block;">
+    </button>
+  </nav>
 
-<!-- ============ 1. HERO ============ -->
-<section class="hero theme-green" id="home">
-  <!-- React-Three-Fiber 3D Scene Dynamic Mount -->
-  <div id="hero-3d-root" class="hero-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></div>
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero theme-green" id="home">
+    <!-- React-Three-Fiber 3D Scene Dynamic Mount -->
+    <div id="hero-3d-root" class="hero-canvas"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></div>
 
-  <!-- drifting clouds -->
-  <div class="cloud c1"><svg width="220" height="80" viewBox="0 0 220 80"><ellipse cx="60" cy="55" rx="60" ry="25" fill="#fff"/><ellipse cx="120" cy="42" rx="55" ry="30" fill="#fff"/><ellipse cx="170" cy="58" rx="48" ry="22" fill="#fff"/></svg></div>
-  <div class="cloud c2"><svg width="160" height="60" viewBox="0 0 160 60"><ellipse cx="45" cy="42" rx="45" ry="18" fill="#fff"/><ellipse cx="95" cy="32" rx="42" ry="22" fill="#fff"/><ellipse cx="130" cy="44" rx="32" ry="16" fill="#fff"/></svg></div>
-  <div class="cloud c3"><svg width="260" height="90" viewBox="0 0 260 90"><ellipse cx="70" cy="62" rx="70" ry="28" fill="#fff"/><ellipse cx="145" cy="46" rx="65" ry="34" fill="#fff"/><ellipse cx="205" cy="64" rx="55" ry="25" fill="#fff"/></svg></div>
-  <div class="cloud c4"><svg width="180" height="65" viewBox="0 0 180 65"><ellipse cx="50" cy="46" rx="50" ry="20" fill="#fff"/><ellipse cx="105" cy="35" rx="48" ry="25" fill="#fff"/><ellipse cx="145" cy="48" rx="36" ry="17" fill="#fff"/></svg></div>
+    <!-- drifting clouds -->
+    <div class="cloud c1"><svg width="220" height="80" viewBox="0 0 220 80">
+        <ellipse cx="60" cy="55" rx="60" ry="25" fill="#fff" />
+        <ellipse cx="120" cy="42" rx="55" ry="30" fill="#fff" />
+        <ellipse cx="170" cy="58" rx="48" ry="22" fill="#fff" />
+      </svg></div>
+    <div class="cloud c2"><svg width="160" height="60" viewBox="0 0 160 60">
+        <ellipse cx="45" cy="42" rx="45" ry="18" fill="#fff" />
+        <ellipse cx="95" cy="32" rx="42" ry="22" fill="#fff" />
+        <ellipse cx="130" cy="44" rx="32" ry="16" fill="#fff" />
+      </svg></div>
+    <div class="cloud c3"><svg width="260" height="90" viewBox="0 0 260 90">
+        <ellipse cx="70" cy="62" rx="70" ry="28" fill="#fff" />
+        <ellipse cx="145" cy="46" rx="65" ry="34" fill="#fff" />
+        <ellipse cx="205" cy="64" rx="55" ry="25" fill="#fff" />
+      </svg></div>
+    <div class="cloud c4"><svg width="180" height="65" viewBox="0 0 180 65">
+        <ellipse cx="50" cy="46" rx="50" ry="20" fill="#fff" />
+        <ellipse cx="105" cy="35" rx="48" ry="25" fill="#fff" />
+        <ellipse cx="145" cy="48" rx="36" ry="17" fill="#fff" />
+      </svg></div>
 
-  <!-- floating pastel dots -->
-  <div class="float-dot" style="width:14px;height:14px;background:var(--lavender);top:22%;left:14%;animation-delay:-2s"></div>
-  <div class="float-dot" style="width:10px;height:10px;background:var(--peach);top:34%;right:16%;animation-delay:-4s"></div>
-  <div class="float-dot" style="width:18px;height:18px;background:var(--sky);bottom:26%;left:20%;animation-delay:-1s"></div>
-  <div class="float-dot" style="width:8px;height:8px;background:var(--blush);bottom:32%;right:22%;animation-delay:-5s"></div>
+    <!-- floating pastel dots -->
+    <div class="float-dot"
+      style="width:14px;height:14px;background:var(--lavender);top:22%;left:14%;animation-delay:-2s"></div>
+    <div class="float-dot" style="width:10px;height:10px;background:var(--peach);top:34%;right:16%;animation-delay:-4s">
+    </div>
+    <div class="float-dot" style="width:18px;height:18px;background:var(--sky);bottom:26%;left:20%;animation-delay:-1s">
+    </div>
+    <div class="float-dot"
+      style="width:8px;height:8px;background:var(--blush);bottom:32%;right:22%;animation-delay:-5s"></div>
 
-  <!-- teaser passenger plane -->
-  <div class="hero-plane">
-    <img src="assets/passenger_plane.png?v=6" alt="Passenger Plane" style="width: 200px; height: auto;">
-  </div>
+    <!-- teaser passenger plane -->
+    <div class="hero-plane">
+      <img src="assets/passenger_plane.png?v=6" alt="Passenger Plane" style="width: 200px; height: auto;">
+    </div>
 
-  <div class="hero-logo-container reveal" style="margin-bottom: 24px; text-align: center;">
-    <img src="assets/logo-light.png" alt="Peace Out" class="hero-logo-img">
-  </div>
-  
-  <h1 class="hero-logo-title reveal">A softer place to land.</h1>
-  <p class="tagline reveal">Peace Out is a wellness brand and creative community for people who want to slow down, without falling behind. Thoughtful tools, honest resources and a calmer corner of the internet to use them in.</p>
-  <div class="hero-ctas reveal" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
-    <a href="community.html" class="btn btn-primary">Community</a>
-    <a href="shop.html" class="btn btn-primary">Products</a>
-    <a href="collab.html" class="btn btn-primary">For the Coaches</a>
-  </div>
-  
+    <div class="hero-logo-container reveal" style="margin-bottom: 24px; text-align: center;">
+      <img src="assets/logo-light.png" alt="Peace Out" class="hero-logo-img">
+    </div>
+
+    <h1 class="hero-logo-title reveal">A softer place to land.</h1>
+    <p class="tagline reveal">Peace Out is a wellness brand and creative community for people who want to slow down,
+      without falling behind. Thoughtful tools, honest resources and a calmer corner of the internet to use them in.</p>
+    <div class="hero-ctas reveal"
+      style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 24px;">
+      <a href="community.html" class="btn btn-primary">Community</a>
+      <a href="shop.html" class="btn btn-primary">Products</a>
+      <a href="collab.html" class="btn btn-primary">For the Coaches</a>
+    </div>
+
   </section>
 
-<!-- ============ 3. WHAT WE STAND FOR ============ -->
-<section class="about theme-pink" id="about" style="padding: 100px 7vw;">
-  <div style="text-align: center; max-width: 650px; margin: 0 auto;">
-    <span class="eyebrow reveal">What We Stand For</span>
-    <h2 class="section-title reveal" style="margin-top: 12px; margin-bottom: 30px;">Three commitments behind everything we make.</h2>
-    
-    <div class="about-cards-list reveal d1" style="display: flex; flex-direction: column; gap: 16px; text-align: left; width: 100%;">
-      <div class="about-card active">
-        <div class="about-card-header">
-          <div class="about-card-icon">01</div>
-          <h4>Self-love and gratitude</h4>
-        </div>
-        <div class="about-card-body">
-          <p>Simple, repeatable practices that make self-love and gratitude part of an ordinary day, through reflective prompts, workbooks and gentle daily rituals.</p>
-        </div>
-      </div>
-      
-      <div class="about-card">
-        <div class="about-card-header">
-          <div class="about-card-icon">02</div>
-          <h4>Manifestation and vision</h4>
-        </div>
-        <div class="about-card-body">
-          <p>Vision boards and goal-setting grounded in clarity and action, so your intentions become plans you actually follow through on.</p>
-        </div>
-      </div>
-      
-      <div class="about-card">
-        <div class="about-card-header">
-          <div class="about-card-icon">03</div>
-          <h4>Everyday mindfulness</h4>
-        </div>
-        <div class="about-card-body">
-          <p>Accessible mindfulness for real life. Calm, present and easy to begin, with no perfect conditions or extra hours required.</p>
-        </div>
-      </div>
-    </div>
-    
-    <a href="about.html" class="btn btn-ghost" style="margin-top: 32px; display: inline-block;">Read about our values →</a>
-  </div>
-</section>
+  <!-- ============ 3. WHAT WE STAND FOR ============ -->
+  <section class="about theme-pink" id="about" style="padding: 100px 7vw;">
+    <div style="text-align: center; max-width: 650px; margin: 0 auto;">
+      <span class="eyebrow reveal">What We Stand For</span>
+      <h2 class="section-title reveal" style="margin-top: 12px; margin-bottom: 30px;">Three commitments behind
+        everything we make.</h2>
 
-<!-- ============ 4. OUR STORY ============ -->
-<section class="founders theme-green" id="founders" style="padding: 100px 7vw;">
-  <div style="text-align: center;">
-    <span class="eyebrow reveal">our story</span>
-    <h2 class="section-title reveal">Founded across distance. Built with intention.</h2>
-  </div>
-  
-  <div class="story-text-container reveal" style="margin-bottom: 40px; text-align: center;">
-    <blockquote class="story-quote" style="color: #fff;">"Two long-distance best friends. One shared dream. A community built across cities, screens and the small moments in between."</blockquote>
-  </div>
+      <div class="about-cards-list reveal d1"
+        style="display: flex; flex-direction: column; gap: 16px; text-align: left; width: 100%;">
+        <div class="about-card active">
+          <div class="about-card-header">
+            <div class="about-card-icon">01</div>
+            <h4>Self-love and gratitude</h4>
+          </div>
+          <div class="about-card-body">
+            <p>Simple, repeatable practices that make self-love and gratitude part of an ordinary day, through
+              reflective prompts, workbooks and gentle daily rituals.</p>
+          </div>
+        </div>
 
-  <div class="founders-stage reveal d1">
-    <!-- Drishti Card -->
-    <div class="founder-card-wrapper">
-      <div class="founder-image-wrapper">
-        <img src="assets/drishti_photo.png" alt="Drishti Malhotra" class="founder-photo">
-        <h3 class="founder-name" style="color: #fff;">Drishti Malhotra</h3>
-        <span class="founder-role" style="color: var(--pink);">Co-Founder</span>
-      </div>
-      <p class="founder-bio" style="color: rgba(255, 255, 255, 0.88); text-align: center;">Drishti leads creative and brand – shaping how Peace Out reads, sounds and feels. A writer at heart, she turns ideas into the words, stories and reflective tools at the center of everything we make.</p>
-    </div>
+        <div class="about-card">
+          <div class="about-card-header">
+            <div class="about-card-icon">02</div>
+            <h4>Manifestation and vision</h4>
+          </div>
+          <div class="about-card-body">
+            <p>Vision boards and goal-setting grounded in clarity and action, so your intentions become plans you
+              actually follow through on.</p>
+          </div>
+        </div>
 
-    <!-- Flight Curve & Plane Loop Middle -->
-    <div>
-      <div class="flight">
-        <svg class="path" viewBox="0 0 380 220" preserveAspectRatio="none">
-          <path d="M 10 150 C 120 30, 260 30, 370 150" stroke="var(--pink)" stroke-width="2.5" stroke-dasharray="3 10" fill="none" stroke-linecap="round"/>
-        </svg>
-        <div class="trail-dot" style="width:10px;height:10px;left:18%;top:42%;animation-delay:-5.6s; background: var(--pink);"></div>
-        <div class="trail-dot" style="width:14px;height:14px;left:34%;top:26%;animation-delay:-4.9s; background: var(--pink);"></div>
-        <div class="trail-dot" style="width:9px;height:9px;left:50%;top:20%;animation-delay:-4.2s; background: var(--pink);"></div>
-        <div class="trail-dot" style="width:13px;height:13px;left:66%;top:26%;animation-delay:-3.5s; background: var(--pink);"></div>
-        <div class="trail-dot" style="width:10px;height:10px;left:80%;top:42%;animation-delay:-2.8s; background: var(--pink);"></div>
-        <div class="plane" style="display: flex; align-items: center; justify-content: center;">
-          <img src="assets/passenger_plane.png?v=6" alt="Passenger Plane" style="width: 160px; height: auto;">
+        <div class="about-card">
+          <div class="about-card-header">
+            <div class="about-card-icon">03</div>
+            <h4>Everyday mindfulness</h4>
+          </div>
+          <div class="about-card-body">
+            <p>Accessible mindfulness for real life. Calm, present and easy to begin, with no perfect conditions or
+              extra hours required.</p>
+          </div>
         </div>
       </div>
-      <div class="distance-tags" style="margin-top: 10px;">
-        <span>📍 Delhi</span><span>✈️ 1,363 miles</span><span>📍 Chennai</span>
+
+      <a href="about.html" class="btn btn-ghost" style="margin-top: 32px; display: inline-block;">Read about our values
+        →</a>
+    </div>
+  </section>
+
+  <!-- ============ 4. OUR STORY ============ -->
+  <section class="founders theme-green" id="founders" style="padding: 100px 7vw;">
+    <div style="text-align: center;">
+      <span class="eyebrow reveal">our story</span>
+      <h2 class="section-title reveal">Two Friends. One Shared Vision.</h2>
+    </div>
+
+    <div class="story-text-container reveal" style="margin-bottom: 40px; text-align: center;">
+      <blockquote class="story-quote" style="color: #fff;">"Two long-distance best friends. One shared dream. A
+        community built across cities, screens and the small moments in between."</blockquote>
+    </div>
+
+    <div class="founders-stage reveal d1">
+      <!-- Drishti Card -->
+      <div class="founder-card-wrapper">
+        <div class="founder-image-wrapper">
+          <img src="assets/drishti_photo.png" alt="Drishti Malhotra" class="founder-photo">
+          <h3 class="founder-name" style="color: #fff;">Drishti Malhotra</h3>
+        </div>
+        <p class="founder-bio" style="color: rgba(255, 255, 255, 0.88); text-align: center;">Drishti leads Peace Out's creative vision and brand voice, shaping how the whole community reads, sounds and feels.</p>
+      </div>
+
+      <!-- Flight Curve & Plane Loop Middle -->
+      <div>
+        <div class="flight">
+          <svg class="path" viewBox="0 0 380 220" preserveAspectRatio="none">
+            <path d="M 10 150 C 120 30, 260 30, 370 150" stroke="var(--pink)" stroke-width="2.5" stroke-dasharray="3 10"
+              fill="none" stroke-linecap="round" />
+          </svg>
+          <div class="trail-dot"
+            style="width:10px;height:10px;left:18%;top:42%;animation-delay:-5.6s; background: var(--pink);"></div>
+          <div class="trail-dot"
+            style="width:14px;height:14px;left:34%;top:26%;animation-delay:-4.9s; background: var(--pink);"></div>
+          <div class="trail-dot"
+            style="width:9px;height:9px;left:50%;top:20%;animation-delay:-4.2s; background: var(--pink);"></div>
+          <div class="trail-dot"
+            style="width:13px;height:13px;left:66%;top:26%;animation-delay:-3.5s; background: var(--pink);"></div>
+          <div class="trail-dot"
+            style="width:10px;height:10px;left:80%;top:42%;animation-delay:-2.8s; background: var(--pink);"></div>
+          <div class="plane" style="display: flex; align-items: center; justify-content: center;">
+            <img src="assets/passenger_plane.png?v=6" alt="Passenger Plane" style="width: 160px; height: auto;">
+          </div>
+        </div>
+        <div class="distance-tags" style="margin-top: 10px;">
+          <span>📍 Delhi</span><span>✈️ 2,199 km</span><span>📍 Chennai</span>
+        </div>
+      </div>
+
+      <!-- Harleen Card -->
+      <div class="founder-card-wrapper">
+        <div class="founder-image-wrapper">
+          <img src="assets/harleen_photo.jpg" alt="Harleen Kaur" class="founder-photo">
+          <h3 class="founder-name" style="color: #fff;">Harleen Kaur</h3>
+        </div>
+        <p class="founder-bio" style="color: rgba(255, 255, 255, 0.88); text-align: center;">Harleen leads product and strategy, turning big ideas into tools people can actually use and small daily practices that hold up in a busy life.</p>
       </div>
     </div>
 
-    <!-- Harleen Card -->
-    <div class="founder-card-wrapper">
-      <div class="founder-image-wrapper">
-        <img src="assets/harleen_photo.jpg" alt="Harleen Kaur" class="founder-photo">
-        <h3 class="founder-name" style="color: #fff;">Harleen Kaur</h3>
-        <span class="founder-role" style="color: var(--pink);">Co-Founder</span>
+
+  </section>
+
+  <!-- ============ 5. PRODUCTS ============ -->
+  <section class="products theme-pink" id="products">
+    <div style="text-align: center;">
+      <span class="eyebrow reveal">made with intention</span>
+      <h2 class="section-title reveal">Tools for softer, steadier days.</h2>
+      <p class="section-sub reveal" style="max-width: 750px; margin: 0 auto 40px;">Everything we make is built on real
+        exercises and clear guidance, not vague affirmations. Beautifully designed, genuinely useful and made to fold
+        into an ordinary day. Start wherever you need to.</p>
+    </div>
+
+    <div class="card-stack-wrapper reveal d1">
+      <div class="card-stack-container" id="card-stack">
+        <!-- Cards will be initialized here by JS -->
       </div>
-      <p class="founder-bio" style="color: rgba(255, 255, 255, 0.88); text-align: center;">Harleen leads product and experience – translating ideas into structured, usable tools and the small daily practices that actually stick. She makes sure everything we create is as practical as it is beautiful.</p>
+      <div class="card-stack-controls"
+        style="margin-top: 24px; display: flex; flex-direction: column; align-items: center; gap: 16px;">
+        <div class="stack-arrow-row">
+          <button id="btn-stack-left" class="stack-arrow-btn" aria-label="Previous product">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 18L9 12L15 6" />
+            </svg>
+          </button>
+          <button id="btn-stack-right" class="stack-arrow-btn" aria-label="Next product">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18L15 12L9 6" />
+            </svg>
+          </button>
+        </div>
+        <a href="shop.html" class="btn btn-primary"
+          style="background: var(--pink) !important; color: var(--charcoal) !important; font-weight: 700; border: none !important; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;">Shop
+          all products →</a>
+      </div>
     </div>
-  </div>
+  </section>
 
-  
-</section>
+  <!-- ============ 7. STAY CONNECTED ============ -->
+  <section class="socials theme-green footer-compact" id="socials">
+    <div class="footer-compact-inner reveal">
+      <div class="footer-compact-copy" style="text-align: center;">
+        <span class="eyebrow" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.3)">stay
+          close</span>
+        <h2 class="section-title">Join our corner on the internet.</h2>
+        <p class="section-sub" style="max-width: 650px; margin: 0 auto 30px; opacity: 0.9;">Honest letters on Substack,
+          ideas worth sharing on LinkedIn and a community that keeps it human. One newsletter, no noise, plus first
+          access to everything we make.</p>
+      </div>
 
-<!-- ============ 5. PRODUCTS ============ -->
-<section class="products theme-pink" id="products">
-  <div style="text-align: center;">
-    <span class="eyebrow reveal">made with intention</span>
-    <h2 class="section-title reveal">Tools for softer, steadier days.</h2>
-    <p class="section-sub reveal" style="max-width: 750px; margin: 0 auto 40px;">Everything we make is built on real exercises and clear guidance, not vague affirmations. Beautifully designed, genuinely useful and made to fold into an ordinary day. Start wherever you need to.</p>
-  </div>
+      <!-- Substack Email Embed -->
+      <div class="substack-embed-wrapper reveal d1"
+        style="display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 650px; margin: 0 auto;">
+        <div class="substack-embed-container" style="width: 100%; display: flex; justify-content: center;">
+          <iframe src="https://outp.substack.com/embed" width="100%" height="320"
+            style="border: 1px solid #EEE; background: white; border-radius: 16px; width: 100%; max-width: 650px;"
+            frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="consent-notice"
+          style="font-size: 0.85rem; text-align: center; width: 100%; margin-top: 12px; opacity: 0.9;">
+          <span>By subscribing, you agree to our <a href="terms.html"
+              style="color: var(--pink); text-decoration: underline;">Terms & Conditions</a> and <a href="privacy.html"
+              style="color: var(--pink); text-decoration: underline;">Privacy Policy</a>.</span>
+        </div>
+      </div>
 
-  <div class="card-stack-wrapper reveal d1">
-    <div class="card-stack-container" id="card-stack">
-      <!-- Cards will be initialized here by JS -->
+
+
+      <div class="social-row footer-socials" style="margin-top: 30px;">
+        <a href="https://www.instagram.com/peaceeout__" target="_blank" rel="noopener noreferrer"
+          class="social-cloud reveal d2">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.92-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+          </svg>
+          <span>Instagram</span>
+        </a>
+        <a href="https://www.linkedin.com/company/peaceeout/" target="_blank" rel="noopener noreferrer"
+          class="social-cloud reveal d3">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://substack.com/@peaceeout" target="_blank" rel="noopener noreferrer"
+          class="social-cloud reveal d4">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M22.539 8.242H1.46V5.406h21.078v2.836zM1.46 10.881H22.54v2.834H1.46v-2.834zm0 5.477h21.078V24L12 18.818 1.46 24v-7.642z" />
+          </svg>
+          <span>Substack</span>
+        </a>
+        <a href="https://chat.whatsapp.com/JJVXARxrFijARqtxovcCYN" target="_blank" rel="noopener noreferrer"
+          class="social-cloud reveal d5">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+          </svg>
+          <span>WhatsApp</span>
+        </a>
+      </div>
     </div>
-    <div class="card-stack-controls" style="margin-top: 24px; display: flex; flex-direction: column; align-items: center; gap: 16px;">
-      <button id="btn-animate-stack" class="animate-btn">Check This Out</button>
-      <a href="shop.html" class="btn btn-primary" style="background: var(--pink) !important; color: var(--charcoal) !important; font-weight: 700; border: none !important; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;">Shop all products →</a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column brand-column">
+        <h2 class="footer-logo">Peace Out</h2>
+
+          
+        <div class="social-links">
+          <a href="https://www.instagram.com/peaceeout__" aria-label="Instagram" target="_blank"
+            rel="noopener noreferrer">Instagram</a>
+          <a href="https://chat.whatsapp.com/JJVXARxrFijARqtxovcCYN" aria-label="WhatsApp" target="_blank"
+            rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://substack.com/@peaceeout" aria-label="Substack" target="_blank"
+            rel="noopener noreferrer">Substack</a>
+          <a href="https://www.linkedin.com/company/peaceeout/" aria-label="LinkedIn" target="_blank"
+            rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="footer-column links-column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="collab.html">Work With Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column legal-column">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column about-column">
+        <h3>About</h3>
+        <p>Discover the story behind Peace Out and meet the founders.</p>
+        <a href="about.html" class="footer-quick-access-btn">Quick Access</a>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ 7. STAY CONNECTED ============ -->
-<section class="socials theme-pink footer-compact" id="socials">
-  <div class="footer-compact-inner reveal">
-    <div class="footer-compact-copy" style="text-align: center;">
-      <span class="eyebrow" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.3)">stay close</span>
-      <h2 class="section-title">Join our corner of the internet.</h2>
-      <p class="section-sub" style="max-width: 650px; margin: 0 auto 30px; opacity: 0.9;">Honest letters on Substack, ideas worth sharing on LinkedIn and a community that keeps it human. One newsletter, no noise, plus first access to everything we make.</p>
+    <div class="footer-bottom">
+      <p>© 2026 Peace Out. All rights reserved.</p>
     </div>
-    
-    <!-- Email capture bar -->
-    <form id="inline-newsletter-form" class="newsletter-inline-form footer-form reveal d1">
-      <input id="inline-email" type="email" name="email" placeholder="your email, gently held" required>
-      <button type="submit" class="btn btn-primary">Join us</button>
-    </form>
-    
-    <p class="final-line reveal" style="margin-top: 24px; font-family: var(--font-serif); font-style: italic; font-size: 1.15rem; color: var(--pink);">see you in the clouds. ☁️</p>
-    
-    <div class="social-row footer-socials" style="margin-top: 30px;">
-      <a href="https://www.instagram.com/peaceeout__" target="_blank" rel="noopener noreferrer" class="social-cloud reveal d2">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.92-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-        <span>Instagram</span>
-      </a>
-      <a href="https://www.linkedin.com/company/peaceeout/" target="_blank" rel="noopener noreferrer" class="social-cloud reveal d3">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-        <span>LinkedIn</span>
-      </a>
-      <a href="https://substack.com/@peaceeout" target="_blank" rel="noopener noreferrer" class="social-cloud reveal d4">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.078v2.836zM1.46 10.881H22.54v2.834H1.46v-2.834zm0 5.477h21.078V24L12 18.818 1.46 24v-7.642z"/></svg>
-        <span>Substack</span>
-      </a>
-      <a href="https://chat.whatsapp.com/JJVXARxrFijARqtxovcCYN" target="_blank" rel="noopener noreferrer" class="social-cloud reveal d5">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.248 8.477 3.517 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.73 2.022 14.28 1.01 11.996 1.01c-5.439 0-9.862 4.372-9.866 9.8.001 1.954.512 3.86 1.482 5.561l-.979 3.575 3.673-.966zm13.11-7.094c-.267-.134-1.58-.78-1.822-.867-.243-.088-.419-.133-.596.134-.176.265-.685.867-.839 1.043-.154.177-.308.197-.575.063-.267-.134-1.126-.415-2.145-1.325-.793-.707-1.329-1.581-1.485-1.848-.156-.266-.016-.41.117-.542.12-.12.267-.31.401-.464.133-.156.177-.266.267-.442.09-.177.045-.332-.022-.466-.067-.134-.596-1.436-.817-1.971-.215-.519-.432-.449-.596-.449-.15-.006-.324-.006-.497-.006-.174 0-.457.065-.696.306-.239.242-.912.891-.912 2.174 0 1.282.933 2.52 1.063 2.697.13.177 1.836 2.804 4.448 3.93.621.268 1.107.427 1.485.547.624.198 1.192.171 1.64.103.5-.077 1.58-.646 1.802-1.242.22-.596.22-1.107.154-1.242-.066-.134-.243-.215-.51-.349z"/></svg>
-        <span>WhatsApp</span>
-      </a>
-    </div>
-  </div>
-</section>
+  </footer>
 
-<footer>© 2026 Peace Out</footer>
+  <script src="script.js?v=18"></script>
+  <script async defer src="https://www.instagram.com/embed.js"></script>
 
-<script src="script.js?v=18"></script>
-<script async defer src="https://www.instagram.com/embed.js"></script>
-
-<!-- ES Module Importmap for React Three Fiber dynamically from CDN -->
-<script type="importmap">
+  <!-- ES Module Importmap for React Three Fiber dynamically from CDN -->
+  <script type="importmap">
   {
     "imports": {
       "react": "https://esm.sh/react@18.2.0",
@@ -240,65 +374,87 @@
   }
 </script>
 
-<script type="module">
-  import React from 'react';
-  import { createRoot } from 'react-dom/client';
-  import HeroScene from './scenes/HeroScene.js';
-
-  const rootContainer = document.getElementById('hero-3d-root');
-  if (rootContainer) {
-    const root = createRoot(rootContainer);
-    root.render(React.createElement(HeroScene));
-  }
-
-// Substack Serverless Subscribe Handler
-const newsletterForm = document.getElementById('inline-newsletter-form');
-if (newsletterForm) {
-  newsletterForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const emailInput = document.getElementById('inline-email');
-    const submitBtn = newsletterForm.querySelector('button[type="submit"]');
-    const email = emailInput.value.trim();
-    
-    if (!email) return;
-    
-    const originalText = submitBtn.textContent;
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Joining...';
-    
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      });
-      
-      const data = await response.json();
-      
-      if (data.success) {
-        submitBtn.textContent = 'Joined! 🌸';
-        emailInput.value = '';
-      } else {
-        submitBtn.textContent = 'Error! ⚠️';
-        alert('Something went wrong. Please try again.');
-      }
-    } catch (err) {
-      console.error(err);
-      submitBtn.textContent = 'Error! ⚠️';
-      alert('Network error. Please try again.');
-    } finally {
-      // Reset button back to normal state after 4 seconds
-      setTimeout(() => {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
-      }, 4000);
+  <!-- SEO Structured Data for Google Search Console -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Peace Out Wellness Collection",
+    "description": "Mindful tools, gentle resources and a wellness community.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Peace Out"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "128"
     }
-  });
-}
-</script>
+  }
+  </script>
+
+  <script type="module">
+    import React from 'react';
+    import { createRoot } from 'react-dom/client';
+    import HeroScene from './scenes/HeroScene.js';
+
+    const rootContainer = document.getElementById('hero-3d-root');
+    if (rootContainer) {
+      const root = createRoot(rootContainer);
+      root.render(React.createElement(HeroScene));
+    }
+
+    // Substack Serverless Subscribe Handler
+    const newsletterForm = document.getElementById('inline-newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const emailInput = document.getElementById('inline-email');
+        const submitBtn = newsletterForm.querySelector('button[type="submit"]');
+        const email = emailInput.value.trim();
+
+        if (!email) return;
+
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Joining...';
+
+        try {
+          const response = await fetch('/api/subscribe', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email }),
+          });
+
+          const data = await response.json();
+
+          if (data.success) {
+            submitBtn.textContent = 'Joined! 🌸';
+            emailInput.value = '';
+          } else {
+            submitBtn.textContent = 'Error! ⚠️';
+            alert('Something went wrong. Please try again.');
+          }
+        } catch (err) {
+          console.error(err);
+          submitBtn.textContent = 'Error! ⚠️';
+          alert('Network error. Please try again.');
+        } finally {
+          // Reset button back to normal state after 4 seconds
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+          }, 4000);
+        }
+      });
+    }
+  </script>
 
 </body>
+
 </html>

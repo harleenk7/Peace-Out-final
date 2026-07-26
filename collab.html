@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
+  <link rel="stylesheet" href="styles.css?v=51">
+
   <style>
     :root {
       --emerald: #035547;
@@ -20,6 +21,8 @@
       --charcoal: #13261f;
       --charcoal-soft: #3a4f45;
       --card-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+      --font-sans: 'Outfit', sans-serif;
+      --font-serif: 'Fraunces', serif;
     }
     
     * {
@@ -39,70 +42,19 @@
       flex-direction: column;
     }
     
-    /* Navigation */
-    .nav-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 14px 22px;
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.82);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      box-shadow: 0 10px 30px rgba(110, 140, 180, 0.08);
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      right: 20px;
-      width: auto;
-      max-width: 1200px;
-      margin: 0 auto;
-      z-index: 1000;
-      transition: all 0.3s ease;
-      transform: translateY(0);
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
     }
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-      flex: 1;
-      color: #000;
-      font-weight: 700;
-      font-size: 1.3rem;
-      font-family: 'Fraunces', serif;
-      transition: transform 0.3s ease;
+    ::-webkit-scrollbar-track {
+      background: var(--emerald-dark);
     }
-    .nav-brand:hover {
-      transform: scale(1.02);
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
     }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      list-style: none;
-      justify-content: center;
-    }
-    .nav-links a {
-      padding: 8px 12px;
-      border-radius: 999px;
-      text-decoration: none;
-      color: var(--charcoal-soft);
-      font-weight: 600;
-      font-size: 0.92rem;
-      letter-spacing: 0.03em;
-      font-family: 'Nunito Sans', sans-serif;
-      transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-    .nav-links a:hover {
-      background: rgba(143, 178, 214, 0.16);
-      color: var(--charcoal);
-      transform: translateY(-1px);
-    }
-    .nav-links .active {
-      color: var(--emerald);
-      background: rgba(12, 69, 51, 0.06);
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.4);
     }
     
     /* Layout */
@@ -114,6 +66,7 @@
     .container {
       width: 100%;
       max-width: 1100px;
+      margin: 0 auto;
       animation: fadeIn 0.8s cubic-bezier(0.25, 1, 0.5, 1);
     }
     
@@ -262,14 +215,29 @@
       padding: 16px;
       border-radius: 12px;
       border: 1px solid rgba(19, 38, 31, 0.15);
-      background: #fff;
+      background: var(--warm-white);
       font-family: inherit;
       font-size: 1rem;
-      color: var(--charcoal);
+      color: var(--emerald-dark);
       outline: none;
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
     
+    .floating-field select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23035547%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px top 50%;
+      background-size: 12px auto;
+      cursor: pointer;
+    }
+    
+    .floating-field select option {
+      background: var(--warm-white);
+      color: var(--emerald-dark);
+    }
+
     .floating-field input:focus,
     .floating-field select:focus,
     .floating-field textarea:focus {
@@ -282,12 +250,13 @@
       left: 16px;
       top: 50%;
       transform: translateY(-50%);
-      background: #fff;
-      padding: 0 4px;
-      color: var(--charcoal-soft);
+      background: var(--warm-white);
+      padding: 0 8px;
+      color: var(--emerald-dark);
       font-size: 1rem;
       transition: all 0.2s ease;
       pointer-events: none;
+      border-radius: 4px;
     }
     
     .floating-field textarea {
@@ -336,15 +305,126 @@
       transform: scale(0.98);
     }
     
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: var(--emerald-dark);
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.85rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    /* ========================================================================== */
+    /* Footer Styles */
+    /* ========================================================================== */
+    .site-footer {
+      background-color: var(--charcoal);
+      color: var(--warm-white);
+      padding: 80px 7vw 30px;
+      font-family: var(--font-sans);
+      position: relative;
+      z-index: 10;
       margin-top: auto;
+    }
+    .footer-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto 60px;
+    }
+    .site-footer .footer-column {
+      text-align: left;
+    }
+    .site-footer .footer-column h3 {
+      font-family: var(--font-serif) !important;
+      font-size: 1.2rem !important;
+      color: var(--pink) !important;
+      margin-bottom: 20px !important;
+      margin-top: 0 !important;
+    }
+    .site-footer .brand-column .footer-logo {
+      font-family: var(--font-serif) !important;
+      font-size: 2rem !important;
+      color: var(--pink) !important;
+      margin-bottom: 15px !important;
+      margin-top: 0 !important;
+      text-decoration: none !important;
+    }
+    .site-footer .brand-column .footer-tagline {
+      font-size: 0.95rem !important;
+      color: rgba(251, 250, 245, 0.7) !important;
+      margin-bottom: 24px !important;
+      line-height: 1.6 !important;
+      max-width: 300px !important;
+    }
+    .site-footer .social-links {
+      display: flex;
+      gap: 16px;
+    }
+    .site-footer .social-links a {
+      color: var(--pink) !important;
+      text-decoration: none !important;
+      font-size: 0.9rem !important;
+      font-weight: 600 !important;
+      transition: color 0.2s ease;
+    }
+    .site-footer .social-links a:hover {
+      color: #fff !important;
+    }
+    .site-footer .links-column ul, .site-footer .legal-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .site-footer .links-column li, .site-footer .legal-column li {
+      margin-bottom: 12px;
+    }
+    .site-footer .links-column a, .site-footer .legal-column a {
+      color: rgba(251, 250, 245, 0.7) !important;
+      text-decoration: none !important;
+      font-size: 0.95rem !important;
+      transition: color 0.2s ease;
+    }
+    .site-footer .links-column a:hover, .site-footer .legal-column a:hover {
+      color: var(--pink) !important;
+    }
+    .site-footer .about-column p {
+      font-size: 0.95rem !important;
+      color: rgba(251, 250, 245, 0.7) !important;
+      margin-bottom: 20px !important;
+      line-height: 1.6 !important;
+    }
+    .site-footer .footer-quick-access-btn {
+      display: inline-block !important;
+      margin-top: 10px !important;
+      padding: 10px 24px !important;
+      background-color: var(--pink) !important;
+      color: var(--charcoal) !important;
+      border-radius: 999px !important;
+      font-family: var(--font-sans) !important;
+      font-size: 0.95rem !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      border: none !important;
+      transition: transform 0.2s ease, background-color 0.2s ease !important;
+    }
+    .site-footer .footer-quick-access-btn:hover {
+      background-color: #fff !important;
+      transform: translateY(-2px) !important;
+      color: var(--charcoal) !important;
+    }
+    .site-footer .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(251, 250, 245, 0.1);
+    }
+    .site-footer .footer-bottom p {
+      font-size: 0.85rem !important;
+      color: rgba(251, 250, 245, 0.5) !important;
+      margin: 0 !important;
+    }
+    @media (max-width: 900px) {
+      .site-footer .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 500px) {
+      .site-footer .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
     }
     
     /* Responsive layout */
@@ -373,7 +453,15 @@
     <li><a href="community.html">Community</a></li>
     <li><a href="collab.html" class="active">Work With Us</a></li>
   </ul>
+
   <div style="flex: 1;"></div>
+
+  <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false" style="padding: 0;">
+
+    <img src="assets/logo.jpg" alt="Menu" class="mobile-menu-icon" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--emerald); display: block;">
+
+  </button>
+
 </nav>
 
 <main>
@@ -404,7 +492,7 @@
           <blockquote>“Working with Drishti and Harleen at Peace Out has been an incredible experience. From the very beginning, they took the time to truly understand the vision behind our wellness practice and have become trusted strategic partners in bringing that vision to life.
           <br><br>
           What I value most is their innovative mindset and thoughtful use of technology to spark new ideas, strengthen brand strategy and create meaningful content.”</blockquote>
-          <div class="testimonial-meta">— Strategic Wellness Partner</div>
+          <div class="testimonial-meta">— Prerna Mahajan, Mindfulness Coach</div>
         </div>
       </div>
       
@@ -451,6 +539,13 @@
             <label for="collab-message">Tell us more about your ideas</label>
           </div>
           
+          <div class="consent-checkbox" style="margin-bottom: 24px; font-size: 0.85rem; color: var(--charcoal); text-align: center;">
+            <label style="display: flex; align-items: flex-start; justify-content: center; gap: 8px; cursor: pointer;">
+              <input type="checkbox" name="consent" required style="margin-top: 4px;">
+              <span>I agree to the <a href="terms.html" style="color: var(--emerald); text-decoration: underline;">Terms & Conditions</a> and <a href="privacy.html" style="color: var(--emerald); text-decoration: underline;">Privacy Policy</a>.</span>
+            </label>
+          </div>
+          
           <button class="collab-submit" type="submit">Submit Proposal</button>
         </form>
       </div>
@@ -459,7 +554,47 @@
   </div>
 </main>
 
-<footer>© 2026 Peace Out</footer>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column brand-column">
+        <h2 class="footer-logo">Peace Out</h2>
+
+        <div class="social-links">
+          <a href="https://www.instagram.com/peaceeout__" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://chat.whatsapp.com/JJVXARxrFijARqtxovcCYN" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://substack.com/@peaceeout" aria-label="Substack" target="_blank" rel="noopener noreferrer">Substack</a>
+          <a href="https://www.linkedin.com/company/peaceeout/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      
+      <div class="footer-column links-column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="collab.html">Work With Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column legal-column">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column about-column">
+        <h3>About</h3>
+        <p>Discover the story behind Peace Out and meet the founders.</p>
+        <a href="about.html" class="footer-quick-access-btn">Quick Access</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Peace Out. All rights reserved.</p>
+    </div>
+  </footer>
 
 <script>
 
@@ -511,5 +646,6 @@ style.innerHTML = `
 document.head.appendChild(style);
 </script>
 
+<script src="script.js?v=21"></script>
 </body>
 </html>

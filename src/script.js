@@ -171,16 +171,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Scroll stop navbar logic: hide when scrolling, show when stopped
-  const navBar = document.getElementById('site-nav');
-  if (navBar) {
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-      navBar.classList.add('nav-hidden');
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
-        navBar.classList.remove('nav-hidden');
-      }, 250);
-    }, { passive: true });
-  }
+
 });

@@ -10,17 +10,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=44">
+  <link rel="stylesheet" href="styles.css?v=51">
   
   <style>
     body {
       background-color: var(--warm-white);
       color: var(--charcoal);
-    }
-    .nav-links a {
-      font-family: 'Nunito Sans', sans-serif !important;
-      font-size: 0.92rem !important;
-      letter-spacing: 0.03em !important;
     }
   </style>
 </head>
@@ -35,17 +30,23 @@
     <li><a href="community.html" class="active">Community</a></li>
     <li><a href="collab.html">Work With Us</a></li>
   </ul>
+
   <div style="flex: 1;"></div>
+
+  <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false" style="padding: 0;">
+
+    <img src="assets/logo.jpg" alt="Menu" class="mobile-menu-icon" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--emerald); display: block;">
+
+  </button>
+
 </nav>
 
 <main>
   
   <!-- Community Section -->
-  <section class="community-section">
+  <section class="community-section" style="min-height: 50vh; display: flex; align-items: center; justify-content: center; padding-top: 120px;">
     <div style="text-align: center;" class="reveal">
-      <span class="eyebrow" style="background: rgba(3,85,71,0.08); color: var(--emerald); border-color: rgba(3,85,71,0.15)">community</span>
-      <h1 style="font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 500; line-height: 1.25; margin-top: 12px; margin-bottom: 16px;">Our corners of the internet.</h1>
-      <p class="subtitle" style="font-size: 1.08rem; opacity: 0.9; max-width: 650px; margin: 0 auto;">Connect with a growing group of people who would rather grow steadily than burn out trying. Slow, quiet channels to keep it human.</p>
+      <h1 style="font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 500; line-height: 1.25; margin: 0;">Our corners on the internet.</h1>
     </div>
     
 
@@ -54,8 +55,7 @@
   <!-- Instagram & Reels grid (moved from index.html) -->
   <section class="instagram theme-green" id="instagram" style="padding: 80px 7vw;">
     <div style="text-align: center;" class="reveal">
-      <span class="eyebrow" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.25)">community in motion</span>
-      <h2 class="section-title" style="color: #fff; margin-top: 12px;">Where the everyday lives.</h2>
+      <span class="eyebrow" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.25); margin-bottom: 24px;">community in motion</span>
       <p class="section-sub" style="max-width: 750px; margin: 0 auto 40px; color: rgba(255,255,255,0.85);">Workbook releases, wellness tips, reflection prompts, slow visual reels and behind-the-scenes building of Peace Out.</p>
     </div>
 
@@ -94,45 +94,70 @@
     <div class="footer-compact-inner reveal">
       <div class="footer-compact-copy" style="text-align: center;">
         <span class="eyebrow" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.3)">stay close</span>
-        <h2 class="section-title">Join our corner of the internet.</h2>
+        <h2 class="section-title">Join our corner on the internet.</h2>
         <p class="section-sub" style="max-width: 650px; margin: 0 auto 30px; opacity: 0.9;">Honest letters on Substack, ideas worth sharing on LinkedIn and a community that keeps it human. One newsletter, no noise, plus first access to everything we make.</p>
       </div>
       
-      <!-- Email capture bar -->
-      <form id="inline-newsletter-form" class="newsletter-inline-form footer-form reveal d1">
-        <input id="inline-email" type="email" name="email" placeholder="your email, gently held" required>
-        <button type="submit" class="btn btn-primary">Join us</button>
-      </form>
+      <!-- Substack Email Embed -->
+      <div class="substack-embed-wrapper reveal d1" style="display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 650px; margin: 0 auto;">
+        <div class="substack-embed-container" style="width: 100%; display: flex; justify-content: center;">
+          <iframe src="https://outp.substack.com/embed" width="100%" height="320" style="border: 1px solid #EEE; background: white; border-radius: 16px; width: 100%; max-width: 650px;" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="consent-notice" style="font-size: 0.85rem; text-align: center; width: 100%; margin-top: 12px; color: var(--charcoal-soft);">
+          <span>By subscribing, you agree to our <a href="terms.html" style="color: var(--emerald); text-decoration: underline;">Terms & Conditions</a> and <a href="privacy.html" style="color: var(--emerald); text-decoration: underline;">Privacy Policy</a>.</span>
+        </div>
+      </div>
       
-      <p class="final-line reveal" style="margin-top: 24px; font-family: var(--font-serif); font-style: italic; font-size: 1.15rem; color: var(--pink);">see you in the clouds. ☁️</p>
+
     </div>
   </section>
 
 </main>
 
-<footer>© 2026 Peace Out</footer>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column brand-column">
+        <h2 class="footer-logo">Peace Out</h2>
+
+        <div class="social-links">
+          <a href="https://www.instagram.com/peaceeout__" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://chat.whatsapp.com/JJVXARxrFijARqtxovcCYN" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://substack.com/@peaceeout" aria-label="Substack" target="_blank" rel="noopener noreferrer">Substack</a>
+          <a href="https://www.linkedin.com/company/peaceeout/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      
+      <div class="footer-column links-column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="collab.html">Work With Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column legal-column">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column about-column">
+        <h3>About</h3>
+        <p>Discover the story behind Peace Out and meet the founders.</p>
+        <a href="about.html" class="footer-quick-access-btn">Quick Access</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Peace Out. All rights reserved.</p>
+    </div>
+  </footer>
 
 <script async defer src="https://www.instagram.com/embed.js"></script>
 <script>
-// gentle fade-in on scroll
-const io = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
-},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// Scroll stop navbar logic
-const navBar = document.getElementById('site-nav');
-if (navBar) {
-  let scrollTimeout;
-  window.addEventListener('scroll', () => {
-    navBar.classList.add('nav-hidden');
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      navBar.classList.remove('nav-hidden');
-    }, 250);
-  }, { passive: true });
-}
-
 // Substack Serverless Subscribe Handler
 const newsletterForm = document.getElementById('inline-newsletter-form');
 if (newsletterForm) {
@@ -182,5 +207,6 @@ if (newsletterForm) {
 }
 </script>
 
+<script src="script.js?v=21"></script>
 </body>
 </html>

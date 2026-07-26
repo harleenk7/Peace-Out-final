@@ -23,12 +23,12 @@
     .about-hero {
       text-align: center;
       max-width: 800px;
-      margin: 0 auto 60px;
+      margin: 0 auto 30px;
       padding: 0 7vw;
     }
     .about-values-section {
       background: var(--bg-pink);
-      padding: 80px 7vw;
+      padding: 40px 7vw;
     }
     .about-values-grid {
       display: grid;
@@ -87,7 +87,15 @@
     <li><a href="community.html">Community</a></li>
     <li><a href="collab.html">Work With Us</a></li>
   </ul>
+
   <div style="flex: 1;"></div>
+
+  <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false" style="padding: 0;">
+
+    <img src="assets/logo.jpg" alt="Menu" class="mobile-menu-icon" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--emerald); display: block;">
+
+  </button>
+
 </nav>
 
 <main>
@@ -106,7 +114,7 @@
     <!-- What We Stand For (3 Commitments Dropdowns) -->
     <div style="text-align: center;" class="reveal">
       <span class="eyebrow" style="background: rgba(255,255,255,0.4); color: var(--emerald); border-color: rgba(3,85,71,0.1)">what we stand for</span>
-      <h2 class="section-title" style="margin-top: 12px;">Three commitments behind everything we make.</h2>
+      <h2 class="section-title" style="margin-top: 12px;">Three anchors behind everything we build.</h2>
     </div>
     
     <div class="about-cards-list reveal d1" style="max-width: 800px; margin: 40px auto 60px; display: flex; flex-direction: column; gap: 16px; text-align: left;">
@@ -216,54 +224,38 @@
 <section class="founders theme-green" id="founders" style="padding: 100px 7vw;">
   <div style="text-align: center;">
     <span class="eyebrow reveal">our story</span>
-    <h2 class="section-title reveal">Founded across distance. Built with intention.</h2>
+    <h2 class="section-title reveal">Two Friends. One Shared Vision.</h2>
   </div>
   
-  <div class="story-text-container reveal" style="margin-bottom: 40px; text-align: center;">
-    <p class="section-sub" style="max-width: 700px; margin: 30px auto; color: rgba(255,255,255,0.92); font-size: 1.1rem; line-height: 1.65; text-align: center;">Peace Out began as a long-distance conversation and grew into a collection of workbooks, newsletters, and tools. We focus on growing steadily, prioritising mental peace over burnout.</p>
-  </div>
+    <div class="founders-layout reveal d1" style="display: flex; flex-direction: column; gap: 80px; max-width: 1000px; margin: 60px auto 0;">
 
-  <div class="founders-stage reveal d1">
-    <!-- Drishti Card -->
-    <div class="founder-card-wrapper">
-      <div class="founder-image-wrapper">
-        <img src="assets/drishti_photo.png" alt="Drishti Malhotra" class="founder-photo">
-        <h3 class="founder-name" style="color: #fff;">Drishti Malhotra</h3>
-        <span class="founder-role" style="color: var(--pink);">Co-Founder</span>
-      </div>
-      <p class="founder-bio" style="color: rgba(255, 255, 255, 0.88); text-align: center;">Drishti leads creative and brand – shaping how Peace Out reads, sounds and feels. A writer at heart, she turns ideas into the words, stories and reflective tools at the center of everything we make.</p>
-    </div>
-
-    <!-- Flight Curve & Plane Loop Middle -->
-    <div>
-      <div class="flight">
-        <svg class="path" viewBox="0 0 380 220" preserveAspectRatio="none">
-          <path d="M 10 150 C 120 30, 260 30, 370 150" stroke="var(--pink)" stroke-width="2.5" stroke-dasharray="3 10" fill="none" stroke-linecap="round"/>
-        </svg>
-        <div class="trail-dot" style="width:10px;height:10px;left:18%;top:42%;animation-delay:-5.6s; background: var(--pink);"></div>
-        <div class="trail-dot" style="width:14px;height:14px;left:34%;top:26%;animation-delay:-4.9s; background: var(--pink);"></div>
-        <div class="trail-dot" style="width:9px;height:9px;left:50%;top:20%;animation-delay:-4.2s; background: var(--pink);"></div>
-        <div class="trail-dot" style="width:13px;height:13px;left:66%;top:26%;animation-delay:-3.5s; background: var(--pink);"></div>
-        <div class="trail-dot" style="width:10px;height:10px;left:80%;top:42%;animation-delay:-2.8s; background: var(--pink);"></div>
-        <div class="plane" style="display: flex; align-items: center; justify-content: center;">
-          <img src="assets/passenger_plane.png?v=6" alt="Passenger Plane" style="width: 160px; height: auto;">
+      <!-- Drishti Row -->
+      <div class="founder-row" style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+        <div class="founder-image-col" style="flex: 1; min-width: 300px;">
+          <img src="assets/drishti_photo.png" alt="Drishti Malhotra" style="width: 100%; border-radius: 24px; box-shadow: 0 12px 30px rgba(0,0,0,0.15);">
+        </div>
+        <div class="founder-text-col" style="flex: 1.2; min-width: 300px; text-align: left;">
+          <h3 style="font-family: 'Fraunces', serif; font-size: 2.2rem; color: #fff; margin-bottom: 20px;">Drishti Malhotra</h3>
+          <p style="font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.9); margin-bottom: 14px;">Drishti leads Peace Out's creative vision and brand voice, shaping how the whole community reads, sounds and feels.</p>
+          <p style="font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.9); margin-bottom: 14px;">A writer at heart, she has a gift for turning big, abstract ideas into words people hold onto: honest stories, gentle prompts and quiet tools for reflection.</p>
+          <p style="font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.9);">She believes wellness should feel like a warm place you come back to, rather than one more task on the list and she writes everything with that in mind. Somewhere in every piece of Peace Out, you will find her voice.</p>
         </div>
       </div>
-      <div class="distance-tags" style="margin-top: 10px;">
-        <span>📍 Delhi</span><span>✈️ 1,363 miles</span><span>📍 Chennai</span>
-      </div>
-    </div>
 
-    <!-- Harleen Card -->
-    <div class="founder-card-wrapper">
-      <div class="founder-image-wrapper">
-        <img src="assets/harleen_photo.jpg" alt="Harleen Kaur" class="founder-photo">
-        <h3 class="founder-name" style="color: #fff;">Harleen Kaur</h3>
-        <span class="founder-role" style="color: var(--pink);">Co-Founder</span>
+      <!-- Harleen Row -->
+      <div class="founder-row" style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+        <div class="founder-text-col" style="flex: 1.2; min-width: 300px; text-align: left;">
+          <h3 style="font-family: 'Fraunces', serif; font-size: 2.2rem; color: #fff; margin-bottom: 20px;">Harleen Kaur</h3>
+          <p style="font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.9); margin-bottom: 14px;">Harleen leads product and strategy, turning big ideas into tools people can actually use and small daily practices that hold up in a busy life.</p>
+          <p style="font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.9); margin-bottom: 14px;">She pairs a sharp eye for detail with real warmth, shaping the resources, collaborations and partnerships that carry Peace Out out into the world.</p>
+          <p style="font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.9);">Grounded in her own practice of mindfulness and intentional growth, she builds things that make peace feel practical and genuinely within reach.</p>
+        </div>
+        <div class="founder-image-col" style="flex: 1; min-width: 300px;">
+          <img src="assets/harleen_photo.jpg" alt="Harleen Kaur" style="width: 100%; border-radius: 24px; box-shadow: 0 12px 30px rgba(0,0,0,0.15);">
+        </div>
       </div>
-      <p class="founder-bio" style="color: rgba(255, 255, 255, 0.88); text-align: center;">Harleen leads product and experience – translating ideas into structured, usable tools and the small daily practices that actually stick. She makes sure everything we create is as practical as it is beautiful.</p>
+
     </div>
-  </div>
 
   
 </section>
@@ -273,14 +265,59 @@
     <h2 style="font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 16px;">Ready to explore our workbooks?</h2>
     <p style="font-size: 1.05rem; color: var(--charcoal-soft); max-width: 550px; margin: 0 auto 30px;">Choose a guide aligned with your goals and start folding mindful practices into your everyday routine.</p>
     <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-      <a href="shop.html" class="btn btn-primary" style="background: var(--pink) !important; color: var(--charcoal) !important; font-weight: 700; border: none !important;">View shop</a>
+      <a href="shop.html" class="btn btn-primary" style="background: var(--pink) !important; color: var(--charcoal) !important; font-weight: 700; border: 1px solid rgba(19, 38, 31, 0.25) !important;">View shop</a>
       <a href="collab.html" class="btn btn-ghost">Work with us</a>
     </div>
   </section>
 
 </main>
 
-<footer>© 2026 Peace Out</footer>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column brand-column">
+        <h2 class="footer-logo">Peace Out</h2>
+
+          
+        <div class="social-links">
+          <a href="https://www.instagram.com/peaceeout__" aria-label="Instagram" target="_blank"
+            rel="noopener noreferrer">Instagram</a>
+          <a href="https://chat.whatsapp.com/JJVXARxrFijARqtxovcCYN" aria-label="WhatsApp" target="_blank"
+            rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://substack.com/@peaceeout" aria-label="Substack" target="_blank"
+            rel="noopener noreferrer">Substack</a>
+          <a href="https://www.linkedin.com/company/peaceeout/" aria-label="LinkedIn" target="_blank"
+            rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="footer-column links-column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="collab.html">Work With Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column legal-column">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column about-column">
+        <h3>About</h3>
+        <p>Discover the story behind Peace Out and meet the founders.</p>
+        <a href="about.html" class="footer-quick-access-btn">Quick Access</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Peace Out. All rights reserved.</p>
+    </div>
+  </footer>
 
 <script>
 // gentle fade-in on scroll
@@ -310,5 +347,6 @@ if (navBar) {
 }
 </script>
 
+<script src="script.js?v=21"></script>
 </body>
 </html>

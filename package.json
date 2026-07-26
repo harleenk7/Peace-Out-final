@@ -4,8 +4,8 @@
   "description": "A modern, calming, and premium single-page landing site for Peace Out startup",
   "main": "index.html",
   "scripts": {
-    "start": "npx -y http-server ./ -p 3000",
-    "dev": "npx -y http-server ./ -p 3000"
+    "start": "npx -y http-server ./ -p 3000 -c-1",
+    "dev": "npx -y http-server ./ -p 3000 -c-1"
   },
   "keywords": [
     "Peace Out",

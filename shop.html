@@ -5,22 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop Digital Workbooks — Peace Out</title>
   <meta name="description" content="Explore our collection of thoughtful digital workbooks, reflection guides and goal-setting tools built to help you slow down.">
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito+Sans:ital,opsz,wght@0,6..12,300;0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=44">
+  <link rel="stylesheet" href="styles.css?v=45">
   
   <style>
     body {
       background-color: var(--warm-white);
       color: var(--charcoal);
-    }
-    .nav-links a {
-      font-family: 'Nunito Sans', sans-serif !important;
-      font-size: 0.92rem !important;
-      letter-spacing: 0.03em !important;
     }
   </style>
 </head>
@@ -35,7 +29,15 @@
     <li><a href="community.html">Community</a></li>
     <li><a href="collab.html">Work With Us</a></li>
   </ul>
+
   <div style="flex: 1;"></div>
+
+  <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false" style="padding: 0;">
+
+    <img src="assets/logo.jpg" alt="Menu" class="mobile-menu-icon" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--emerald); display: block;">
+
+  </button>
+
 </nav>
 
 <main>
@@ -52,7 +54,7 @@
       
       <!-- Card 1: 14 Days -->
       <div class="shop-card">
-        <span class="shop-badge">best seller</span>
+        <span class="shop-badge">best<br>seller</span>
         <div class="shop-image-wrapper">
           <img src="IMG_3918.PNG" alt="14 Days to Love Yourself Challenge">
         </div>
@@ -60,7 +62,7 @@
           <h2 class="shop-card-title">14 Days to Love Yourself Challenge</h2>
           <p class="shop-card-desc">A 14-day guide built on cognitive exercises and reflective journaling prompts to help you establish boundaries, practice self-compassion, and reconnect with your values.</p>
           <div class="shop-price-row">
-            <span class="shop-price">₹149</span>
+            <span class="shop-price">₹49</span>
             <a href="https://topmate.io/peaceout/1967273" target="_blank" rel="noopener noreferrer" class="btn btn-primary shop-btn">Buy Now</a>
           </div>
         </div>
@@ -75,7 +77,7 @@
           <h2 class="shop-card-title">2026 Vision to Alignment Guide</h2>
           <p class="shop-card-desc">Move beyond vague resolutions. This guide helps you craft a structured, strategic vision board with monthly alignment reviews, clear milestones, and actionable check-ins.</p>
           <div class="shop-price-row">
-            <span class="shop-price">₹199</span>
+            <span class="shop-price">₹59</span>
             <a href="https://topmate.io/peaceout/1855072" target="_blank" rel="noopener noreferrer" class="btn btn-primary shop-btn">Buy Now</a>
           </div>
         </div>
@@ -83,6 +85,7 @@
       
       <!-- Card 3: Year-End -->
       <div class="shop-card">
+
         <div class="shop-image-wrapper">
           <img src="IMG_3917.PNG" alt="The Year-End Alignment Workbook">
         </div>
@@ -90,14 +93,16 @@
           <h2 class="shop-card-title">The Year-End Alignment Workbook</h2>
           <p class="shop-card-desc">Close out one year with honesty and enter the next with clarity. Reflect on lessons, release what no longer serves you, and align your priorities for a grounded start.</p>
           <div class="shop-price-row">
-            <span class="shop-price">₹249</span>
+            <span class="shop-price">Free</span>
             <a href="https://topmate.io/peaceout/1837503" target="_blank" rel="noopener noreferrer" class="btn btn-primary shop-btn">Buy Now</a>
           </div>
         </div>
       </div>
       
-
-
+    </div>
+    
+    <div style="text-align: center; margin-top: 60px;" class="reveal d2">
+      <a href="https://topmate.io/peaceout" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding: 14px 40px; font-size: 1.05rem; font-family: 'Fraunces', serif; letter-spacing: 0.02em;">View All Products</a>
     </div>
   </section>
 
@@ -153,7 +158,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Due to the instant digital nature of downloadable workbooks, all sales are final. If you experience any file download or transaction issues, please email us at peaceoutt2025@gmail.com and we will assist you immediately.
+            Due to the instant digital nature of downloadable workbooks, all sales are final. If you experience any file download or transaction issues, please email us at <a href="mailto:peaceoutt2025@gmail.com" style="color: inherit; text-decoration: underline;">peaceoutt2025@gmail.com</a> and we will assist you immediately.
           </div>
         </div>
       </div>
@@ -163,28 +168,50 @@
 
 </main>
 
-<footer>© 2026 Peace Out</footer>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-column brand-column">
+        <h2 class="footer-logo">Peace Out</h2>
+
+        <div class="social-links">
+          <a href="https://www.instagram.com/peaceeout__" aria-label="Instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://chat.whatsapp.com/JJVXARxrFijARqtxovcCYN" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <a href="https://substack.com/@peaceeout" aria-label="Substack" target="_blank" rel="noopener noreferrer">Substack</a>
+          <a href="https://www.linkedin.com/company/peaceeout/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      
+      <div class="footer-column links-column">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="collab.html">Work With Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column legal-column">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column about-column">
+        <h3>About</h3>
+        <p>Discover the story behind Peace Out and meet the founders.</p>
+        <a href="about.html" class="footer-quick-access-btn">Quick Access</a>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>© 2026 Peace Out. All rights reserved.</p>
+    </div>
+  </footer>
 
 <script>
-// gentle fade-in on scroll
-const io = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
-},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// Scroll stop navbar logic
-const navBar = document.getElementById('site-nav');
-if (navBar) {
-  let scrollTimeout;
-  window.addEventListener('scroll', () => {
-    navBar.classList.add('nav-hidden');
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      navBar.classList.remove('nav-hidden');
-    }, 250);
-  }, { passive: true });
-}
-
 // Collapsible FAQ Accordion toggle
 document.querySelectorAll('.faq-question').forEach(button => {
   button.addEventListener('click', () => {
@@ -210,5 +237,6 @@ document.querySelectorAll('.faq-question').forEach(button => {
 });
 </script>
 
+<script src="script.js?v=21"></script>
 </body>
 </html>
