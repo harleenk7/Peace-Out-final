@@ -2,10 +2,11 @@
   "name": "peaceout-landing-page",
   "version": "1.0.0",
   "description": "A modern, calming, and premium single-page landing site for Peace Out startup",
+  "type": "module",
   "main": "index.html",
   "scripts": {
-    "start": "npx -y http-server ./ -p 3000 -c-1",
-    "dev": "npx -y http-server ./ -p 3000 -c-1"
+    "start": "node dev-server.js",
+    "dev": "node dev-server.js"
   },
   "keywords": [
     "Peace Out",

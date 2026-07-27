@@ -11,3 +11,7 @@ desktop.ini
 
 # Temporary files
 *.tmp
+
+# Environment variables
+.env
+.env.local
