@@ -6,7 +6,9 @@
   "main": "index.html",
   "scripts": {
     "start": "node dev-server.js",
-    "dev": "node dev-server.js"
+    "dev": "node dev-server.js",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "keywords": [
     "Peace Out",
@@ -16,5 +18,8 @@
     "gratitude"
   ],
   "author": "Harleen Kaur & Drishti Malhotra",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "wrangler": "^4.114.0"
+  }
 }
