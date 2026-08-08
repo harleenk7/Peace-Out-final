@@ -646,17 +646,17 @@ document.getElementById('collab-form').addEventListener('submit', async function
     submitBtn.disabled = true;
     submitBtn.innerText = 'Submitting...';
     
-    const response = await fetch('/api/collab-proposal', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbzqK5Zljtn23-rjABJ4hIsuE8mV2D8VgEEDbmtg_6UY9n5tAna-o255QYwWhJl8IROv-w/exec', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'text/plain;charset=utf-8'
       },
       body: JSON.stringify({ name, email, type, purpose, message })
     });
     
     const data = await response.json();
     
-    if (response.ok && data.success) {
+    if (data.success) {
       showToast(`Thank you, ${name}! Your proposal has been gently received.`);
       document.getElementById('collab-form').reset();
     } else {
